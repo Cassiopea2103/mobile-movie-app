@@ -37,7 +37,7 @@ const useFetch = <T>(fetchFunction: () => Promise<T>, autoFetch: boolean = true)
         [autoFetch, fetchData]
     )
 
-    return {data, loading, error, refetch: fetchData(), reset};
+    return {data, loading, error, refetch: fetchData, reset};
 
 }
 
