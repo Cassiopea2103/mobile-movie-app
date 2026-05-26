@@ -34,7 +34,8 @@ const useFetch = <T>(fetchFunction: () => Promise<T>, autoFetch: boolean = true)
                 fetchData();
             }
         },
-        [autoFetch, fetchData]
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        []
     )
 
     return {data, loading, error, refetch: fetchData, reset};
