@@ -6,6 +6,7 @@ import {useRouter} from "expo-router";
 import useFetch from "@/services/useFetch";
 import {fetchMovies} from "@/services/api";
 import MovieCard from "@/components/MovieCard";
+import {useState} from "react";
 
 const HomePage = () => {
 
@@ -16,6 +17,8 @@ const HomePage = () => {
         loading: moviesLoading,
         error: moviesError
     } = useFetch(() => fetchMovies({searchQuery: ''}))
+
+    const [searchQuery, setSearchQuery] = useState<string>('');
 
     return (
         <View className={"flex-1 bg-primary"}>
@@ -60,6 +63,8 @@ const HomePage = () => {
                                 <View className={'flex-1 mt-5'}>
                                     {/*Search bar */}
                                     <SearchBar
+                                        value={searchQuery}
+                                        onChangeText={(text: string) => setSearchQuery(text)}
                                         onPress={() => router.push("/search")}
                                         placeholder="Search movies, TV shows, actors..."
                                     />
