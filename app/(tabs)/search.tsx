@@ -25,8 +25,9 @@ const Search = () => {
             async () => {
                 if (searchQuery.trim()) {
                     await loadMovies();
+                } else {
+                    resetMovies();
                 }
-                resetMovies();
             }, 500
         );
 
