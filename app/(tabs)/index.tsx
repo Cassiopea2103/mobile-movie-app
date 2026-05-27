@@ -55,7 +55,8 @@ const HomePage = () => {
                             (
                                 <Text> Error loading movies : {moviesError.message} </Text>
                             )
-                            : (
+                            :
+                            (
                                 <View className={'flex-1 mt-5'}>
                                     {/*Search bar */}
                                     <SearchBar
@@ -63,9 +64,7 @@ const HomePage = () => {
                                         placeholder="Search movies, TV shows, actors..."
                                     />
                                     {/*    Movies content */}
-                                    <Text
-                                        className={'text-lg text-white font-bold mt-5 mb-3'}
-                                    >
+                                    <Text className={'text-lg text-white font-bold mt-5 mb-3'}>
                                         Movies list
                                     </Text>
                                     <FlatList
